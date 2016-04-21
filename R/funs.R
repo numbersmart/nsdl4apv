@@ -91,8 +91,8 @@ m_AddMortalidad <- function(tbl,
   # 2. Distribución por Edad
   # Cortar ambos data sets por edad...
   h_2 <- subset(h, x > edad_baja & x < edad_alta)
-  h_c <- subset(h, x < edad_baja | x >= edad_alta)
-  m_2 <- subset(m, x >= edad_baja & x < edad_alta)
+  h_c <- subset(h, x <= edad_baja | x >= edad_alta)
+  m_2 <- subset(m, x > edad_baja & x < edad_alta)
   m_c <- subset(m, x <= edad_baja | x >= edad_alta)
 
   # Distribuir a las muertes por edad que queda
